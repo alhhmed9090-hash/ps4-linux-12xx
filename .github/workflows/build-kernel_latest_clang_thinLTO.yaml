@@ -425,7 +425,11 @@ jobs:
           scripts/config --disable CONFIG_LTO_CLANG_FULL
           scripts/config --enable CONFIG_LTO_CLANG_THIN
 
-          make ${MAKE_OPTS} olddefconfig
+          make ${MAKE_OPTS} olddefconfig./scripts/config --enable CONFIG_DMI
+          ./scripts/config --enable CONFIG_DMIID
+          ./scripts/config --enable CONFIG_DMI_SYSFS
+          ./scripts/config --enable CONFIG_FW_CFG_SYSFS
+
           make ${MAKE_OPTS} prepare
           echo "Making kernel. . ."
           make ${MAKE_OPTS}
