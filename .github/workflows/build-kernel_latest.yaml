@@ -420,7 +420,11 @@ jobs:
           scripts/config --enable CONFIG_LTO_NONE
 
           make ${MAKE_OPTS} olddefconfig
-          make ${MAKE_OPTS} prepare
+     ./scripts/config --enable CONFIG_DMI
+./scripts/config --enable CONFIG_DMIID
+./scripts/config --enable CONFIG_DMI_SYSFS
+./scripts/config --enable CONFIG_FW_CFG_SYSFS
+     make ${MAKE_OPTS} prepare
           echo "Making kernel. . ."
           make ${MAKE_OPTS}
           echo "Making modules . . ."
