@@ -561,3 +561,8 @@ jobs:
  # There is github.com/google/yamlfmt , which works decent
  # At least it tells you what is broken and what isn't
  # IMPORTANT: You CANNOT, put comments outside a run block, before the block is over; Unless it is aligned with the commands.
+      - name: Upload bzImage
+        uses: actions/upload-artifact@v4
+        with:
+          name: bzImage-sober
+          path: "**/arch/x86/boot/bzImage"
